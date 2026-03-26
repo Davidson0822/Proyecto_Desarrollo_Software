@@ -16,10 +16,10 @@ public class DocumentationConfig {
                                 .title("API de Sistema de inventario")
                                 .version("1.0")
                                 .description("Esta API seria la utilizada por el sistema")
-                                .contact(new Contact().name("Juan Camilo Buritica Patiño").email("juanburitica1129428@correo.itm.edu.com"))
+                                .contact(new Contact().name("Juan Camilo Buritica Patiño").email("juanburitica1129428@correo.itm.edu.co"))
                                 .contact(new Contact().name("Juan Camilo Orozco Blandon").email("juanorozco321265@correo.itm.edu.co"))
-                                .contact(new Contact().name("Davidson Osorio Noreña").email("davidsonosorio"))
-                                .contact(new Contact().name("Esteban Jimenez Guerra").email("estebanjimenez")));
+                                .contact(new Contact().name("Davidson Osorio Noreña").email("davidsonosorio1129975@correo.itm.edu.co"))
+                                .contact(new Contact().name("Esteban Jimenez Guerra").email("estebanjimenez1133418@correo.itm.edu.co")));
 
     }
 }
