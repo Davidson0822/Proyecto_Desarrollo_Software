@@ -12,7 +12,10 @@ public class Conexion {
 
     public Connection getCon() {
         try {
-            con = DriverManager.getConnection("", "", ""); //aqui se ingresa los datos de la database
+            con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/inventario_db?serverTimezone=UTC",
+                    "root",
+                    "root"); //datos de la database
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex);
