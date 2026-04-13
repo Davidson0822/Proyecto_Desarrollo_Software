@@ -6,9 +6,13 @@ import java.sql.SQLException;
 
 import edu.itm.SistemaDeInventario.identidadesSQL.Producto;
 import edu.itm.SistemaDeInventario.utilities.Conexion;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.ArrayList;
 
+
+@Repository
 public class ProductoDAOImpl implements IProductoDAO {
 
     private Conexion conexion = new Conexion();
