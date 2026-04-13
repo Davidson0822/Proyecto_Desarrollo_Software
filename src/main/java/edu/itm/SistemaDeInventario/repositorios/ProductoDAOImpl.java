@@ -62,13 +62,63 @@ public class ProductoDAOImpl implements IProductoDAO {
     }
 
 
-    //TODO: implementar metodos de escritura y eliminacion (puntos 3 y 4)
     @Override
-    public int save(Producto producto) { return 0; }
+    public int save(Producto producto) {
+        String sql = "INSERT INTO productos (nomProducto, descripcionProducto, ingresoProducto) VALUES (?, ?, ?)";
+        try (Connection con = conexion.getCon();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, producto.getNomProducto());
+            ps.setString(2, producto.getDescripcionProducto());
+            ps.setDate(3, new java.sql.Date(producto.getIngresoProducto().getTime()));
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Error al guardar producto: " + e.getMessage());
+            return 0;
+        }
+    }
 
     @Override
-    public int update(Producto producto) { return 0; }
+    public int update(Producto producto) {
+        if (producto.getIdProducto() <= 0) {
+            System.err.println("ID inválido para actualizar.");
+            return 0;
+        }
+        String sql = "UPDATE productos SET nomProducto = ?, descripcionProducto = ?, ingresoProducto = ? WHERE idProducto = ?";
+        try (Connection con = conexion.getCon();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, producto.getNomProducto());
+            ps.setString(2, producto.getDescripcionProducto());
+            ps.setDate(3, new java.sql.Date(producto.getIngresoProducto().getTime()));
+            ps.setInt(4, producto.getIdProducto());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar producto: " + e.getMessage());
+            return 0;
+        }
+    }
 
     @Override
-    public int delete(int id) { return 0; }
+    public int delete(int id) {
+        if (id <= 0) {
+            System.err.println("ID inválido para eliminar.");
+            return 0;
+        }
+        String sql = "DELETE FROM productos WHERE idProducto = ?";
+        try (Connection con = conexion.getCon();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar producto: " + e.getMessage());
+            return 0;
+        }
+    }
 }
