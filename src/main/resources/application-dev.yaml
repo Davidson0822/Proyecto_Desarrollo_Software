@@ -12,3 +12,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 8081
+
+# Habilitar Swagger UI
+springdoc:
+  swagger-ui:
+    enabled: true

@@ -14,7 +14,7 @@ public class Producto {
 
     private String nomProducto;
 
-    private String DescripcionProducto;
+    private String descripcionProducto;
 
     private Date ingresoProducto;
 }

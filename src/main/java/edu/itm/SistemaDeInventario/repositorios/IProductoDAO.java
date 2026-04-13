@@ -7,7 +7,8 @@ import java.util.List;
 
      //Interfaz que define patrón DAO para la entidad Producto
 
-    public interface IProductoDAO {
+    public interface IProductoDAO
+    {
 
         //
         List<Producto> findAll();

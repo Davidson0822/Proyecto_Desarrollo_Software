@@ -13,4 +13,5 @@ public interface ProductoServicesInterface {
     int save(Producto producto);
 
     int update(Producto producto);
+    int delete(int id);
 }
