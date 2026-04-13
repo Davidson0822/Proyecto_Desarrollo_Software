@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,22 @@ public interface ProductoControllerApi{
     @GetMapping("/listar")
     ResponseEntity<List<Producto>> getProductos();
 
-    @PostMapping("/nuevo")
+    @Operation(
+        tags = {"Producto"},
+        summary = "Busque un producto en especifico",
+        description = "Permite Buscar un producto especifico",
+        responses = {
+                @ApiResponse(responseCode = "200", description = "Busqueda realizada correctamente",
+                        content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Producto.class))}),
+                @ApiResponse(responseCode = "404", description = "No se encontro el producto")
+        }
+    )
+    @GetMapping("/{id}")
+    ResponseEntity<Producto> findById(@PathVariable int id);
+
+    @GetMapping("/nuevo")
     ResponseEntity<Integer> insertarProducto(@RequestBody Producto estudiante);
+//
+//    @DeleteMapping
+//    ResponseEntity<>
 }

@@ -15,6 +15,8 @@ public class ProductoServices implements ProductoServicesInterface
 
     public List<Producto> findAll(){ return repositorySQL.findAll();};
 
+    public Producto findById(int id){ if (id <= 0) {return repositorySQL.findById(id);} else {return null;}}
+
     public int save(Producto producto) {return repositorySQL.save(producto);}
 
     public int update(Producto producto) {return repositorySQL.update(producto);}
