@@ -23,11 +23,34 @@ public class ProductoServices implements ProductoServicesInterface
         }
     }
 
-    public int save(Producto producto) {return repositorySQL.save(producto);}
+    public int save(Producto producto) {
+        Producto existente = repositorySQL.findById(producto.getIdProducto());
 
-    public int update(Producto producto) {return repositorySQL.update(producto);}
+        if(existente != null) {
+            throw new RuntimeException("El ID producto ya existe");
+        }
 
-    public int delete(int id) { return repositorySQL.delete(id); }
+        return repositorySQL.save(producto);
+    }
 
+    public int update(Producto producto) {
+        Producto existente = repositorySQL.findById(producto.getIdProducto());
+
+        if (existente == null) {
+            throw new RuntimeException("No se puede actualizar, el producto no existe");
+        }
+
+        return repositorySQL.update(producto);
+    }
+
+    public int delete(int id) {
+        Producto existente = repositorySQL.findById(id);
+
+        if (existente == null) {
+            throw new RuntimeException("No se puede eliminar, el producto no existe");
+        }
+
+        return repositorySQL.delete(id);
+    }
 
 }

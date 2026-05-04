@@ -19,6 +19,7 @@ public class Conexion {
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex);
+            System.out.println("error conexion BdeD");
             ex.printStackTrace();
         }
         return con;
