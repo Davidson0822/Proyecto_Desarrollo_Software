@@ -1,5 +1,6 @@
 package edu.itm.SistemaDeInventario.identidadesSQL;
 
+
 import lombok.*;
 import java.util.Date;
 
@@ -9,6 +10,9 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
+
+
 public class Producto {
 
     private Integer idProducto;
