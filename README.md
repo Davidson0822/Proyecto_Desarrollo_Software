@@ -1,15 +1,16 @@
-# Sistema de Inventario Básico
+# Sistema de Inventario
+
 ### Asignatura: Desarrollo de Software
 ### Institución: Instituto Tecnológico Metropolitano (ITM)
 
 ## 📝 Descripción del Proyecto
-Este repositorio contiene el código fuente y la documentación para el desarrollo de un **Sistema de Inventario Básico**. El proyecto se enfoca en la gestión eficiente de productos, permitiendo realizar operaciones fundamentales de control de existencias, bajo estándares de calidad de software y una arquitectura orientada a objetos.
+Este repositorio contiene el código fuente y la documentación para el desarrollo de un **Sistema de Inventario**. El proyecto se enfoca en la gestión eficiente de productos, permitiendo realizar operaciones fundamentales de control de existencias, bajo estándares de calidad de software y una arquitectura orientada a objetos.
 
-El sistema busca aplicar los conceptos aprendidos en la asignatura de **Desarrollo de Software**, tales como patrones de diseño, principios SOLID y control de versiones.
+El sistema busca aplicar los conceptos aprendidos en la asignatura de **Desarrollo de Software**.
 
 ## 🛠️ Tecnologías y Herramientas
 * **Lenguaje:** Java
-* **IDE:** Visual Studio Code
+* **IDE:** IntelliJ IDEA
 * **Gestión de Versiones:** Git & GitHub
 
 ## 👥 Equipo de Desarrollo
